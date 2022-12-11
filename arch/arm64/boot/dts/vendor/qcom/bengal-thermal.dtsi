@@ -543,7 +543,7 @@
 		};
 	};
 
-	backlight_therm {
+	emmc-ufs-therm-usr {
 		polling-delay-passive = <0>;
 		polling-delay = <0>;
 		thermal-governor = "user_space";

@@ -163,7 +163,7 @@
 		dmas = <&gpi_dma0 0 0 1 64 0>,
 			<&gpi_dma0 1 0 1 64 0>;
 		dma-names = "tx", "rx";
-		status = "enable";
+		status = "disabled";
 	};
 
 	/* SPI Instance */
@@ -189,6 +189,7 @@
 		status = "disabled";
 	};
 
+	/* SPI Instance */
 	qupv3_se2_spi: spi@4a88000 {
 		compatible = "qcom,spi-geni";
 		#address-cells = <1>;
@@ -200,8 +201,8 @@
 			<&gcc GCC_QUPV3_WRAP_0_M_AHB_CLK>,
 			<&gcc GCC_QUPV3_WRAP_0_S_AHB_CLK>;
 		pinctrl-names = "default", "sleep";
-		pinctrl-0 = <&qupv3_se2_spi_active &qupv3_se2_spi_cs0_active>;
-		pinctrl-1 = <&qupv3_se2_spi_sleep &qupv3_se2_spi_cs0_sleep>;
+		pinctrl-0 = <&qupv3_se2_spi_active>;
+		pinctrl-1 = <&qupv3_se2_spi_sleep>;
 		interrupts = <GIC_SPI 329 IRQ_TYPE_LEVEL_HIGH>;
 		spi-max-frequency = <50000000>;
 		qcom,wrapper-core = <&qupv3_0>;
@@ -210,8 +211,6 @@
 		dma-names = "tx", "rx";
 		status = "disabled";
 	};
-
-
 
 	/* SPI Instance */
 	qupv3_se5_spi: spi@4a94000 {
@@ -233,6 +232,6 @@
 		dmas = <&gpi_dma0 0 5 1 64 0>,
 			<&gpi_dma0 1 5 1 64 0>;
 		dma-names = "tx", "rx";
-		status = "enable";
+		status = "disabled";
 	};
 };
